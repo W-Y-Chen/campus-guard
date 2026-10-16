@@ -1,0 +1,19 @@
+# 校盾 CampusGuard 可选依赖
+#
+# 【重要】本工程核心引擎为零第三方依赖（纯 Python 标准库）。
+# 下面全部为可选项，不安装也能完整运行：
+#     python run_demo.py
+#     python serve.py
+#     python -m bench.evaluate
+#
+# 安装：  pip install -r requirements.txt
+
+# --- 语义通道的可选实现（TF-IDF + 逻辑回归），替换默认的纯 Python 朴素贝叶斯 ---
+scikit-learn>=1.3
+
+# --- 可选的 API 层（自动生成 OpenAPI 文档），替代零依赖的 serve.py ---
+fastapi>=0.110
+uvicorn>=0.27
+
+# --- 测试（tests/ 已含 70 项单元测试）---
+pytest>=7.4

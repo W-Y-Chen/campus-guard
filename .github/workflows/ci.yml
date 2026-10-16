@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  core-engine:
+    name: 核心引擎（零第三方依赖，${{ matrix.python-version }} / ${{ matrix.os }}）
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.9", "3.11", "3.13"]
+    env:
+      # Windows runner 默认 cp1252 控制台编码，输出中文会抛 UnicodeEncodeError
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip && pip install pytest
+      # 核心引擎为纯标准库实现，不装 scikit-learn / fastapi 也能跑
+      - name: 单元测试（70 项）
+        run: python -m pytest tests -q
+      - name: 命令行端到端演示
+        run: python run_demo.py
+
+  security-invariants:
+    name: 安全不变式（越权拦截穷举 + 篡改检测）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pytest
+      # "越权拦截率 100%" 是用穷举 (可信级 × 能力) 验证的不变式，不是统计值
+      - name: 能力矩阵不变式
+        run: python -m pytest tests/test_security.py -q
+      - name: 变异算子不变式
+        run: python -m pytest tests/test_mutation.py -q
+
+  benchmark:
+    name: 基准评测（可复现）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pytest
+      # 结果写入 docs/benchmark.md，seed 固定为 2026，便于跨环境比对
+      - name: 运行评测
+        run: python -m bench.evaluate
+      - name: 归档评测报告
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark
+          path: docs/benchmark.md

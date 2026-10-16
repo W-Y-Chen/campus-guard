@@ -1,0 +1,496 @@
+{
+  "base": {
+    "recall": 0.9913793103448276,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9956709956709957,
+    "fpr_strict": 0.0,
+    "p95_ms": 0.9854000527411699,
+    "mean_ms": 0.3193029768959577,
+    "tp": 115,
+    "fp": 0,
+    "fn": 1,
+    "tn": 18
+  },
+  "after": {
+    "recall": 0.9913793103448276,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9956709956709957,
+    "fpr_strict": 0.0,
+    "p95_ms": 1.4504999853670597,
+    "mean_ms": 0.5340746294623658,
+    "tp": 115,
+    "fp": 0,
+    "fn": 1,
+    "tn": 18
+  },
+  "ablation": [
+    {
+      "config": "A 无防护",
+      "recall": 0.0,
+      "fpr": 0.0,
+      "asr": 1.0
+    },
+    {
+      "config": "B 仅结构通道 S",
+      "recall": 0.5431,
+      "fpr": 0.0556,
+      "asr": 0.1897
+    },
+    {
+      "config": "C 仅语义通道 M",
+      "recall": 0.569,
+      "fpr": 0.0,
+      "asr": 0.1897
+    },
+    {
+      "config": "D S+M 加权平均（无隔离态）",
+      "recall": 0.6552,
+      "fpr": 0.0,
+      "asr": 0.1897
+    },
+    {
+      "config": "E 完整 DCFD（真实流程）",
+      "recall": 0.9914,
+      "fpr": 0.0,
+      "fpr_strict": 0.0,
+      "asr": 0.1897
+    },
+    {
+      "config": "E+仲裁 完整系统",
+      "recall": 0.9914,
+      "fpr": 0.0,
+      "fpr_strict": 0.0,
+      "asr": 0.0
+    }
+  ],
+  "mutation": {
+    "ms": 1.0,
+    "strict_ms": 0.7635,
+    "total": 148,
+    "killed": 148,
+    "by_operator": {
+      "M2_mixed_lang": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M3_fullwidth": {
+        "total": 4,
+        "killed": 4,
+        "ms": 1.0
+      },
+      "M4_zero_width": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M5_homoglyph": {
+        "total": 2,
+        "killed": 2,
+        "ms": 1.0
+      },
+      "M6_encoding": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M7_split": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M8_dilute": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M9_fake_delim": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M10_roleplay": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M11_carrier": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M12_egress": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M15_char_split": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M17_scatter": {
+        "total": 8,
+        "killed": 8,
+        "ms": 1.0
+      },
+      "M15_char_split+M7_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M12_egress+M8_dilute": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M2_mixed_lang+M5_homoglyph": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M17_scatter+M8_dilute": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M5_homoglyph+M15_char_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M2_mixed_lang+M8_dilute+M6_encoding": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M7_split+M15_char_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M10_roleplay+M2_mixed_lang+M12_egress": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M9_fake_delim+M15_char_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M1_synonym": {
+        "total": 6,
+        "killed": 6,
+        "ms": 1.0
+      },
+      "M4_zero_width+M5_homoglyph": {
+        "total": 2,
+        "killed": 2,
+        "ms": 1.0
+      },
+      "M12_egress+M6_encoding": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M16_codeswitch+M2_mixed_lang": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M2_mixed_lang+M3_fullwidth": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M9_fake_delim+M7_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M17_scatter+M6_encoding+M7_split": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M8_dilute+M12_egress+M10_roleplay": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M13_pinyin": {
+        "total": 4,
+        "killed": 4,
+        "ms": 1.0
+      },
+      "M14_homophone": {
+        "total": 4,
+        "killed": 4,
+        "ms": 1.0
+      },
+      "M16_codeswitch": {
+        "total": 3,
+        "killed": 3,
+        "ms": 1.0
+      },
+      "M8_dilute+M9_fake_delim": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M5_homoglyph+M6_encoding": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M9_fake_delim": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M8_dilute+M16_codeswitch": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M12_egress+M4_zero_width": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M13_pinyin+M17_scatter": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M16_codeswitch+M6_encoding+M2_mixed_lang": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M9_fake_delim+M15_char_split+M2_mixed_lang": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M7_split+M3_fullwidth+M5_homoglyph": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M4_zero_width+M3_fullwidth": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M12_egress+M3_fullwidth+M10_roleplay": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M2_mixed_lang+M10_roleplay": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M10_roleplay+M17_scatter": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M16_codeswitch": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M8_dilute+M2_mixed_lang": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M6_encoding+M7_split+M9_fake_delim": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M5_homoglyph+M13_pinyin+M9_fake_delim": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M4_zero_width+M8_dilute+M11_carrier": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M15_char_split+M6_encoding+M8_dilute": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      },
+      "M11_carrier+M2_mixed_lang+M6_encoding": {
+        "total": 1,
+        "killed": 1,
+        "ms": 1.0
+      }
+    },
+    "by_level": {
+      "1": {
+        "n": 111,
+        "killed": 111,
+        "ms": 1.0,
+        "strict_ms": 0.7117
+      },
+      "2": {
+        "n": 21,
+        "killed": 21,
+        "ms": 1.0,
+        "strict_ms": 0.9048
+      },
+      "3": {
+        "n": 16,
+        "killed": 16,
+        "ms": 1.0,
+        "strict_ms": 0.9375
+      }
+    },
+    "survivors": []
+  },
+  "history": [
+    {
+      "round": 1,
+      "seed": 2063,
+      "ms_before": 0.9889,
+      "ms_after": 0.9889,
+      "strict_ms_before": 0.7667,
+      "strict_ms_after": 0.9333,
+      "ms_by_level": {
+        "L1": {
+          "n": 73,
+          "killed": 72,
+          "ms": 0.9863,
+          "strict_ms": 0.9315
+        },
+        "L2": {
+          "n": 10,
+          "killed": 10,
+          "ms": 1.0,
+          "strict_ms": 1.0
+        },
+        "L3": {
+          "n": 7,
+          "killed": 7,
+          "ms": 1.0,
+          "strict_ms": 0.8571
+        }
+      },
+      "fpr_before": 0.0,
+      "fpr_after": 0.0,
+      "fp_before": 0,
+      "fp_after": 0,
+      "recall_before": 0.9914,
+      "recall_after": 0.9914,
+      "causes": {
+        "ood_uncertain": 10,
+        "struct_blind": 4,
+        "semantic_blind": 3
+      },
+      "actions": [
+        "语义通道重训：新增 11 条难例（其中 8 条已确认语义可识别，纳入已学分布以降低不确定度）",
+        "4 个存活变体属结构盲区，需人工补规则（本轮未自动处理）"
+      ],
+      "accepted": true,
+      "gate_reason": "通过门禁"
+    },
+    {
+      "round": 2,
+      "seed": 2100,
+      "ms_before": 0.9889,
+      "ms_after": 0.9889,
+      "strict_ms_before": 0.9333,
+      "strict_ms_after": 0.9333,
+      "ms_by_level": {
+        "L1": {
+          "n": 73,
+          "killed": 72,
+          "ms": 0.9863,
+          "strict_ms": 0.9315
+        },
+        "L2": {
+          "n": 10,
+          "killed": 10,
+          "ms": 1.0,
+          "strict_ms": 1.0
+        },
+        "L3": {
+          "n": 7,
+          "killed": 7,
+          "ms": 1.0,
+          "strict_ms": 0.8571
+        }
+      },
+      "fpr_before": 0.0,
+      "fpr_after": 0.0,
+      "fp_before": 0,
+      "fp_after": 0,
+      "recall_before": 0.9914,
+      "recall_after": 0.9914,
+      "causes": {
+        "semantic_blind": 2,
+        "ood_uncertain": 5
+      },
+      "actions": [
+        "语义通道重训：新增 7 条难例（其中 5 条已确认语义可识别，纳入已学分布以降低不确定度）",
+        "回退「纳入已学分布」步骤（该操作使部分变体由隔离退化为放行），保留难例重训后重新验收"
+      ],
+      "accepted": false,
+      "gate_reason": "MS 未提升（严格 0.9333 -> 0.9333；宽松 0.9889 -> 0.9889）"
+    },
+    {
+      "round": 3,
+      "seed": 2137,
+      "ms_before": 0.9889,
+      "ms_after": 1.0,
+      "strict_ms_before": 0.9333,
+      "strict_ms_after": 0.9444,
+      "ms_by_level": {
+        "L1": {
+          "n": 73,
+          "killed": 73,
+          "ms": 1.0,
+          "strict_ms": 0.9452
+        },
+        "L2": {
+          "n": 10,
+          "killed": 10,
+          "ms": 1.0,
+          "strict_ms": 1.0
+        },
+        "L3": {
+          "n": 7,
+          "killed": 7,
+          "ms": 1.0,
+          "strict_ms": 0.8571
+        }
+      },
+      "fpr_before": 0.0,
+      "fpr_after": 0.0,
+      "fp_before": 0,
+      "fp_after": 0,
+      "recall_before": 0.9914,
+      "recall_after": 0.9914,
+      "causes": {
+        "ood_uncertain": 6,
+        "semantic_blind": 2
+      },
+      "actions": [
+        "语义通道重训：新增 8 条难例（其中 6 条已确认语义可识别，纳入已学分布以降低不确定度）"
+      ],
+      "accepted": true,
+      "gate_reason": "通过门禁"
+    }
+  ]
+}

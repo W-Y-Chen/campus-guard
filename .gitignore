@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 说明：docs/benchmark.md 与 docs/ablation.json 由 bench.evaluate 生成，
+# 但它们是本仓库的可复现实测记录，故**保留入库**，便于跨环境比对。
+
+# 日志与临时产物
+*.log
+*.tmp
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

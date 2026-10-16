@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "如果本软件对你的研究或产品有帮助，请按以下格式引用。"
+title: "校盾 CampusGuard：面向校园智能体的提示词注入防护与合规审计系统"
+abstract: >-
+  校盾 CampusGuard 面向校园智能体场景，在不依赖 GPU 与在线大模型推理的前提下实现提示词注入检测与工具调用越权拦截。
+  三个自研算法：DCFD（结构–语义双通道证据融合检测，以 Dempster 组合规则合成基本概率分配并输出阻断/隔离/放行三态）、
+  MDGE（变异算子驱动的护栏自进化，以变异得分量化护栏强度并配回归门禁）、
+  TALA（污点感知的最小权限仲裁，切片级污点传播 + 能力矩阵，确定性拦截越权工具调用）。
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/W-Y-Chen/campus-guard"
+keywords:
+  - prompt-injection
+  - llm-security
+  - ai-agent-security
+  - dempster-shafer
+  - mutation-testing
+  - taint-analysis
+  - campus
+authors:
+  - name: "W-Y-Chen"
+version: "1.0.0"
+date-released: "2026-10-16"
